@@ -14,6 +14,6 @@ app.use("/api/v1/tours", toursRouter);
 app.use("/api/v1/auth", usersRouter);
 app.use("/api/v1/users", usersRouter);
 
-app.listen(8000, "127.0.0.1", () => {
+app.listen(8000, "0.0.0.0", () => {
   console.log("Server is listening on port 8000");
 });
