@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const morgan = require("morgan");
 const toursRouter = require("./routers/tours.router");
 const usersRouter = require("./routers/users.router");
@@ -7,6 +8,11 @@ const middlewares = require("./midddlewares/logger");
 const app = express();
 
 app.use(express.json()); // middlewares
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(morgan("dev"));
 app.use(middlewares.mylogger);
 
